@@ -1,5 +1,6 @@
 {
   "name": "currency_exchange",
+  "homepage": "https://nastyazhilko.github.io/currency_exchange/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
