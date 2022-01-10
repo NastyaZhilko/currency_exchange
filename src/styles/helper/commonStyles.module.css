@@ -1,0 +1,8 @@
+:root {
+
+    --global--font-primary: 'Roboto', sans-serif;
+    --global--text-color-primary: black;
+    --global--text-color-secondary: #6d7278;
+    --global--font-weight-title: 500;
+    --global--font-size-title: .8rem;
+}
