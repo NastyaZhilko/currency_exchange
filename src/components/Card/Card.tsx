@@ -2,6 +2,7 @@ import React from 'react'
 import style from './Card.module.css'
 
 const Card = () => {
+
     return <div className={style.container}>
         <div className={style.card}>
             <div className={style.card_Header}>
