@@ -1,3 +1,3 @@
 export const ItemTypes = {
-    ACCOUNT: 'account'
+    ELEMENT: 'element'
 }

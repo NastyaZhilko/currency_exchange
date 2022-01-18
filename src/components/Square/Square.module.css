@@ -1,20 +1,7 @@
-.App {
-    font-family: 'Roboto', sans-serif;
-
-}
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-/*    //grid-gap: 0.75rem; !* To define the gap between rows/columns *!
-   // gap: 0.75rem;
-    //padding: 0.75rem;*/
-    background-color: #222629; /* For contrast */
-    color: #fff;
-}
-/*.card {
-    !* This will come in handy later to center the contents *!
+.card {
+    /* This will come in handy later to center the contents */
     position: relative;
-}*/
+}
 
 .card:after {
     content: "";

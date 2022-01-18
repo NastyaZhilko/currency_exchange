@@ -1,5 +1,6 @@
 import React from 'react'
 import style from './Card.module.css'
+import helper from '../../styles/helpers/typography.module.css'
 
 const Card = () => {
 
@@ -7,7 +8,7 @@ const Card = () => {
         <div className={style.card}>
             <div className={style.card_Header}>
                 <div>
-                    <div className={style.card_Title}>С карты</div>
+                    <div className={helper.title}>С карты</div>
                     <div className={style.card_Description}>Любого банка</div>
                 </div>
                 <div></div>
