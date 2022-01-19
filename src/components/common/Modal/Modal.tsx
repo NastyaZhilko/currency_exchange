@@ -3,16 +3,16 @@ import style from './Modal.module.css'
 
 
 interface ModalType {
-    modal: boolean
-    setModal: (value: boolean) => void
+    open: boolean
+    onClose: () => void
 }
 
 
-const Modal: FC<ModalType> = ({modal, setModal, children}) => {
-    const finalModalClassName = `${style.modal} ${modal ? style.active : ""}`;
-    const finalModalContentClassName = `${style.modal_content} ${modal ? style.active : ""}`;
+const Modal: FC<ModalType> = ({open, onClose, children}) => {
+    const finalModalClassName = `${style.modal} ${open ? style.active : ""}`;
+    const finalModalContentClassName = `${style.modal_content} ${open ? style.active : ""}`;
     return (
-        <div className={finalModalClassName} onClick={ () => setModal(false)}>
+        <div className={finalModalClassName} onClick={ () => onClose()}>
             <div className={finalModalContentClassName} onClick={e =>  e.stopPropagation()}>
                 {children}
             </div>

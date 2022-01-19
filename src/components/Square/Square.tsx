@@ -1,22 +1,27 @@
 import React, {ReactChild} from 'react'
 import {useDrag, useDrop} from "react-dnd";
 import {ItemTypes} from "../../constants/constants";
+import style from "./Square.module.css"
 
 type SquarePropsType = {
     children?: ReactChild
     onDrop?: (current: number, target: number) => void
-    id: number
+    position: number
+}
+
+type DragObject = {
+    position: number
 }
 
 const Square: React.FC<SquarePropsType> = ({
                                                children,
-                                               id,
+                                               position,
                                                onDrop
                                            }) => {
 
     const [{isDragging}, drag] = useDrag(() => ({
         type: ItemTypes.ELEMENT,
-        item: {id},
+        item: {position},
         collect: (monitor) => ({
             isDragging: monitor.isDragging()
         })
@@ -25,54 +30,33 @@ const Square: React.FC<SquarePropsType> = ({
     const [{isOver}, drop] = useDrop(
         () => ({
             accept: ItemTypes.ELEMENT,
-            drop: (e, item) => {
-                // console.log(e)
-                // @ts-ignore
-                onDrop(e.id, id)
+            drop: (e: DragObject) => {
+
+                if (onDrop && e.position !== position) {
+                    onDrop(e.position, position)
+                }
             },
             collect: (monitor) => ({
                 isOver: monitor.isOver(),
             })
-        })
+        }), [onDrop]
     )
 
 
-    return <div ref={drop} style={{
-        position: 'relative',
-        width: '100%',
-        height: '100%'
-    }}>
+    return <div ref={drop} className={style.isDropping}>
         {children ?
-            <div ref={drag} style={{
-                opacity: isDragging ? 0 : 1,
-                cursor: 'move',
+            <div ref={drag} className={style.isDragging} style={{
+                opacity: isDragging ? 0 : 1
             }}>
                 {children}
             </div>
             :
-            (<div className="card">
-                <div className="content">
-                    <div className="center">
-                        Content
-                    </div>
-                </div>
-            </div>)
-
+            (<div className={style.square}/>
+            )
         }
 
         {isOver && (
-            <div
-                style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    height: '100%',
-                    width: '100%',
-                    zIndex: 1,
-                    opacity: 0.5,
-                    backgroundColor: 'yellow',
-                }}
-            />
+            <div className={style.expectedSquare}/>
         )}
     </div>
 }

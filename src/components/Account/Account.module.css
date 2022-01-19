@@ -1,13 +1,8 @@
-.container, .containerDragging {
-    padding: .5rem;
+.container {
     cursor: grab;
     display: inline-block;
-    width: 7.5rem;
-    height: 7.5rem;
+    width: 100%;
+    height: 100%;
 }
 
-.containerDragging {
-    opacity: 0.2;
-    cursor: move
-}
 
