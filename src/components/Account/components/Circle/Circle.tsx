@@ -1,5 +1,5 @@
-import React from 'react'
-import style from './Circle.module.css'
+import React from 'react';
+import style from './Circle.module.css';
 
 export type CommonCircleType = {
     title: string
@@ -20,4 +20,4 @@ const Circle: React.FC<CommonCircleType> = ({title, description, color, children
 
     )
 }
-export default Circle
+export default Circle;

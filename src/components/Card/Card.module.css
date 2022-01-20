@@ -16,7 +16,7 @@
     border-radius: 10px;
 }
 
-.card_Header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,14 +24,14 @@
     text-align: left;
 }
 
-.card_Description {
+.description {
     color: var(--text-color-secondary);
     font-weight: 400;
     font-size: 12px;
     line-height: 130%;
 }
 
-.card_Input {
+.input {
     height: 50px;
     background-color: #fff;
     display: flex;
@@ -44,7 +44,7 @@
     box-sizing: border-box;
 }
 
-.card_Input:focus-within {
+.input:focus-within {
     border: 1px solid #777;
 }
 

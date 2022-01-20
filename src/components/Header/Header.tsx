@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './Header.module.css'
-import Circle from "../common/Circle/Circle";
+import Circle from "../Account/components/Circle/Circle";
 
 const Header = () =>{
     return <div className={style.container}>

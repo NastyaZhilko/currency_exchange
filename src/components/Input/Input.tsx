@@ -4,14 +4,13 @@ import style from "./Input.module.css";
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
-// здесь мы говорим что у нашего инпута будут такие же пропсы как у обычного инпута
-// (чтоб не писать value: string, onChange: ...; они уже все описаны в DefaultInputPropsType)
-type InputPropsType = DefaultInputPropsType & { // и + ещё пропсы которых нет в стандартном инпуте
+type InputPropsType = DefaultInputPropsType & {
     value?: string
     onChange?: (value: string) => void
-    placeholder?: string
+    placeholder: string
     error?: string
     spanClassName?: string
+    color: string
 };
 const Input: React.FC<InputPropsType> = (
     {
@@ -20,7 +19,9 @@ const Input: React.FC<InputPropsType> = (
 
         placeholder,
         error,
-        className, spanClassName
+        className,
+        spanClassName,
+        color
     }
 ) => {
 
@@ -32,14 +33,15 @@ const Input: React.FC<InputPropsType> = (
     }
 
     const finalSpanClassName = `${style.error} ${spanClassName ? spanClassName : ""}`;
-    const finalInputClassName = `${error?style.errorInput:style.superInput} ${className}`; // need to fix with (?:) and s.superInput
+    const finalInputClassName = `${error ? style.errorInput : style.superInput} ${className}`; // need to fix with (?:) and s.superInput
     return (
         <>
-            <input
+            <input style={{backgroundColor: 'color'}}
                 type={"text"}
                 onChange={onChangeCallback}
-                placeholder={"placeholder"}
+                placeholder={placeholder}
                 className={finalInputClassName}
+                color={color}
             />
             {error && <span className={finalSpanClassName}>{error}</span>}
         </>

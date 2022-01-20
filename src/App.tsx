@@ -1,14 +1,26 @@
 import React, {useCallback, useState} from 'react';
 import './App.css';
-import Board, {ItemType} from "./components/Board/Board";
+import Board from "./components/Board/Board";
 import Footer from "./components/Footer/Footer";
 import Account from "./components/Account/Account";
-import Modal from "./components/common/Modal/Modal";
+import Modal from "./components/Modal/Modal";
 import CurrencyTransferForm from "./components/CurrencyTransferForm/CurrencyTransferForm";
+import Card from "./components/Card/Card";
+
+
+export type Item = {
+    position: number
+    data: {
+        sum: number
+        title: string
+        description: string
+        color: string
+    }
+}
 
 let initialItems = [
     {
-        position: 3,
+        position: 1,
         data: {
             sum: 35.24, title: 'USD',
             description: 'Current account',
@@ -16,17 +28,17 @@ let initialItems = [
         }
     },
     {
-        position: 9,
+        position: 16,
         data: {
-            sum: 35.24, title: 'USD',
+            sum: 50, title: 'RYB',
             description: 'Account',
             color: 'green'
         }
     },
     {
-        position: 5,
+        position: 31,
         data: {
-            sum: 35.24, title: 'EUR',
+            sum: 80.59, title: 'EUR',
             description: 'Current account',
             color: 'blue'
         }
@@ -34,18 +46,19 @@ let initialItems = [
 
 ]
 
+
 function App() {
 
-    const [items, setItems] = useState<Array<ItemType>>(initialItems)
+    const [items, setItems] = useState<Item[]>(initialItems)
     const [modalData, setModalData] = useState(null)
 
-
-    console.log(modalData)
     const onDrop = useCallback((current: number, target: number) => {
-        console.log(current, target)
         if (items.some(item => item.position === target)) {
+            let currentAccount = items.find(item => item.position === current)
+            let targetAccount = items.find(item => item.position === target)
             // @ts-ignore
-            setModalData({current: current, target: target})
+            setModalData([currentAccount.data, targetAccount.data])
+
         } else {
             setItems(items => items.map(item => {
                 if (item.position === current) {
@@ -61,8 +74,8 @@ function App() {
     }, [items])
 
     return (<div>
-            <Modal open={modalData!==null} onClose={()=>setModalData(null)}>
-            <CurrencyTransferForm data={setModalData}/>
+            <Modal open={modalData !== null} onClose={() => setModalData(null)}>
+                {modalData && <CurrencyTransferForm data={modalData}/>}
             </Modal>
             <Board items={items}
                    renderItem={({data}) => (<Account {...data}/>)}
@@ -71,7 +84,7 @@ function App() {
             <Footer/>
         </div>
 
-    );
+    )
 }
 
 export default App;
