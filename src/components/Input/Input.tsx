@@ -5,7 +5,7 @@ import style from "./Input.module.css";
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
 type InputPropsType = DefaultInputPropsType & {
-    value?: string
+    value: string | number
     onChange?: (value: string) => void
     placeholder: string
     error?: string
@@ -37,11 +37,12 @@ const Input: React.FC<InputPropsType> = (
     return (
         <>
             <input style={{backgroundColor: 'color'}}
-                type={"text"}
-                onChange={onChangeCallback}
-                placeholder={placeholder}
-                className={finalInputClassName}
-                color={color}
+                   type={"text"}
+                   onChange={onChangeCallback}
+                   placeholder={placeholder}
+                   className={finalInputClassName}
+                   color={color}
+                   value={value}
             />
             {error && <span className={finalSpanClassName}>{error}</span>}
         </>

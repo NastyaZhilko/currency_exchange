@@ -20,6 +20,9 @@
     align-items: center;
     justify-content: center;
 }
+.account{
+    margin-bottom: 1rem;
+}
 
 .arrow {
 
@@ -30,7 +33,13 @@
 .arrow svg{
     width: 50px;
     height: 50px;
-
-
     display: block;
+}
+
+button {
+    transition: all .5s ease;
+}
+button:hover {
+    background: transparent;
+    box-shadow: inset 0 0 0 3px rgb(0 0 0 / 40%);
 }

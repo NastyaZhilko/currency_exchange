@@ -6,7 +6,12 @@ import Button from "../Button/Button";
 import {ReactComponent as ArrowRightSVG} from "./../../assets/svg/rightArrow.svg";
 
 export type CurrencyTransferForm = {
-    data: any
+    data: {
+        sum: number
+        title: string
+        description: string
+        color: string
+    }[]
 }
 
 const CurrencyTransferForm: React.FC<CurrencyTransferForm> = ({data}) => {
@@ -15,9 +20,10 @@ const CurrencyTransferForm: React.FC<CurrencyTransferForm> = ({data}) => {
         <div className={style.main}>
             <div className={style.container}>
                 <div className={style.block}>
-                    <div><Account {...data[0]}/></div>
+                    <div className={style.account}><Account {...data[0]}/></div>
                     <Input
-                        placeholder={data[0].sum}
+                        value={data[0].sum}
+                        placeholder={''}
                         color='#f0f0f0'
                     />
 
@@ -26,9 +32,10 @@ const CurrencyTransferForm: React.FC<CurrencyTransferForm> = ({data}) => {
                     <ArrowRightSVG/>
                 </div>
                 <div className={style.block}>
-                    <div><Account {...data[1]}/></div>
+                    <div className={style.account}><Account {...data[1]}/></div>
                     <Input
-                        placeholder={data[1].sum}
+                        value={data[1].sum}
+                        placeholder={''}
                         color='#f0f0f0'
                     />
                 </div>

@@ -1,9 +1,9 @@
 .square {
     /* This will come in handy later to center the contents */
-   /* position: relative;*/
+    position: relative;
     width: 100%;
     height: 100%;
-
+   /* border: 1px solid #bbe7cf;*/
 }
 
 .square:after {
@@ -17,19 +17,23 @@
 }
 
 .isDragging {
-    height: 100%;
+   /* height: 100%;*/
     cursor: move;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
 }
-.expectedSquare{
+
+.expectedSquare {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
+    right: 0;
+    margin: auto;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
     z-Index: 1;
     opacity: 0.5;
-    background-color: yellow
+    border: 5px solid var(--primary-color)
 }

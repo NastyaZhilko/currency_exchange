@@ -46,7 +46,8 @@ const Square: React.FC<SquarePropsType> = ({
     return <div ref={drop} className={style.isDropping}>
         {children ?
             <div ref={drag} className={style.isDragging} style={{
-                opacity: isDragging ? 0 : 1
+                opacity: isDragging ? 0 : 1,
+                backgroundColor: isDragging ? '': 'none'
             }}>
                 {children}
             </div>
@@ -54,7 +55,6 @@ const Square: React.FC<SquarePropsType> = ({
             (<div className={style.square}/>
             )
         }
-
         {isOver && (
             <div className={style.expectedSquare}/>
         )}
