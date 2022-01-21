@@ -1,35 +1,56 @@
 :root {
     --primary-color: #6d7278;
     --secondary--color: black;
-    --third--color: white
-
+    --third--color: white;
+    --decor--color: red
 }
 
 
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: rgba(0,0,0,0);
+    background-image: url("./../assets/images/background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
-
-h1 {
-
-}
-
-h2 {
-
-}
-
-h3 {
-
-}
-
 
 a {
-
+    color: var(--primary-color);
+    text-decoration: none;
+}
+a :active{
+    color: var(--secondary--color);
+    text-decoration: none;
 }
 
 button {
-    background: var(--primary-color)
+    border: none;
+    color: var(--third--color);
+    background-color: var(--decor--color);
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 1rem;
+    padding: 0.5rem 2rem;
+}
+
+input {
+
+    background: var(--third--color);
+    border: 1px solid var(--primary-color);
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 0.3rem;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding: 0.5rem 0 0.5rem 1rem;
 }
 
 svg {

@@ -6,7 +6,6 @@ export type AccountPropsType = CommonCircleType & {
     sum: number
 }
 
-
 const Account: FC<AccountPropsType> = ({title, description, color, sum}) => {
 
     return (
@@ -14,7 +13,7 @@ const Account: FC<AccountPropsType> = ({title, description, color, sum}) => {
             <Circle description={description}
                     title={title}
                     color={color}
-                    children={sum}
+                    sum={sum}
             />
         </div>
 

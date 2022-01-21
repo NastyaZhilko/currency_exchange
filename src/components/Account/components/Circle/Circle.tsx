@@ -5,17 +5,18 @@ export type CommonCircleType = {
     title: string
     description?: string
     color: string
+    sum?: number
 }
 
-const Circle: React.FC<CommonCircleType> = ({title, description, color, children}) => {
+const Circle: React.FC<CommonCircleType> = ({title, description, color, children, sum}) => {
     return (
 
         <div className={style.container}>
             <div className={style.circle} style={{backgroundColor: color}}>
                 {title}
             </div>
-            <div className={style.circle_children}>{description}</div>
-            <div className={style.circle_children}>{children}</div>
+            <div className={style.description}>{description}</div>
+            <div className={style.sum}>{sum}</div>
         </div>
 
     )

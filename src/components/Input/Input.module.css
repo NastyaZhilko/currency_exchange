@@ -1,28 +1,4 @@
 .superInput {
 
-    height: 40px;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.18);
-    box-sizing: border-box;
-    border-radius: 5px;
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 20px;
-    color: rgba(0, 0, 0, 0.48);
-    margin-bottom: 1rem;
-    padding: 0.2rem 1rem;
-    box-shadow: 0 3px 5px #535354;
 }
 
-.errorInput {
-    border: 3px solid red;
-    background: lightpink;
-}
-
-.error {
-    color: red;
-    font-style: oblique;
-
-}

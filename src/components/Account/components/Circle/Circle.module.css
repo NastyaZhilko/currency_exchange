@@ -1,12 +1,14 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
-    color: black
+    color: var(--secondary--color)
 }
-.circle{
+
+.circle {
+    color: var(--third--color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,6 +18,13 @@
     margin-bottom: .2rem;
 }
 
-.circle_children{
-    text-align: center;
+.description {
+    margin-bottom: .2rem;
 }
+
+.sum {
+    background-color: #c3c3c3;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+}
+
