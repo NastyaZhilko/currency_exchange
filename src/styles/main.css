@@ -1,5 +1,13 @@
-body {
+:root {
+    --primary-color: #6d7278;
+    --secondary--color: black;
+    --third--color: white
 
+}
+
+
+body {
+    margin: 0;
 }
 
 h1 {
@@ -16,5 +24,14 @@ h3 {
 
 a {
 
+}
+
+button {
+    background: var(--primary-color)
+}
+
+svg {
+    background: var(--third--color);
+    fill: var(--primary-color);
 }
 

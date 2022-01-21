@@ -3,6 +3,7 @@ import style from './CurrencyTransferForm.module.css';
 import Account from "../Account/Account";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
+import {ReactComponent as ArrowRightSVG} from "./../../assets/svg/rightArrow.svg";
 
 export type CurrencyTransferForm = {
     data: any
@@ -21,8 +22,8 @@ const CurrencyTransferForm: React.FC<CurrencyTransferForm> = ({data}) => {
                     />
 
                 </div>
-                <div className={style.symbol}>
-                    symbol
+                <div className={style.arrow}>
+                    <ArrowRightSVG/>
                 </div>
                 <div className={style.block}>
                     <div><Account {...data[1]}/></div>

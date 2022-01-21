@@ -21,6 +21,16 @@
     justify-content: center;
 }
 
-.symbol {
+.arrow {
+
     background-color: antiquewhite;
+
+}
+
+.arrow svg{
+    width: 50px;
+    height: 50px;
+
+
+    display: block;
 }

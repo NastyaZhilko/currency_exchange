@@ -25,7 +25,7 @@
 }
 
 .description {
-    color: var(--text-color-secondary);
+    color: var(--primary-color);
     font-weight: 400;
     font-size: 12px;
     line-height: 130%;
@@ -64,7 +64,7 @@
     height: 20px;
     margin: 0;
     padding: 0;
-    color: var(--text-color-primary);
+    color: var(--primary-color);
     font-weight: 400;
     font-size: 14px;
     text-decoration: none;
