@@ -30,7 +30,7 @@ const Board = <Type extends ItemType>({items, renderItem, onDrop}: BoardPropsTyp
             }
         )
         const boardSquare = []
-        for (let i = 1; i <= 75; i++) {
+        for (let i = 1; i <= 60; i++) {
             const square = (<Square
                 key={i} position={i} onDrop={onDrop}>
                 {positionsItems[i] ? renderItem(positionsItems[i]) : undefined}

@@ -28,7 +28,7 @@ let initialItems = [
         }
     },
     {
-        position: 16,
+        position: 13,
         data: {
             sum: 50, title: 'RYB',
             description: 'Account',
@@ -36,7 +36,7 @@ let initialItems = [
         }
     },
     {
-        position: 31,
+        position: 25,
         data: {
             sum: 80.59, title: 'EUR',
             description: 'Current account',
